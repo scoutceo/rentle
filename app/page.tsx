@@ -2,7 +2,6 @@ import { supabase } from '@/lib/supabase'
 import { PairWithApartments } from '@/lib/supabase'
 import GameClient from '@/components/GameClient'
 import StreakDisplay from '@/components/StreakDisplay'
-import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
@@ -56,12 +55,6 @@ export default async function HomePage() {
           </div>
           <div className="flex items-center gap-3">
             <StreakDisplay />
-            <Link
-              href="/admin"
-              className="text-white/30 hover:text-white/60 text-xs transition-colors"
-            >
-              Admin
-            </Link>
           </div>
         </div>
       </header>
@@ -83,13 +76,7 @@ export default async function HomePage() {
           <div className="flex flex-col items-center justify-center py-24 gap-4">
             <p className="text-4xl">🏠</p>
             <p className="text-white/60 text-lg">No apartment pairs scheduled for today.</p>
-            <p className="text-white/30 text-sm">Check back later or add some in the admin panel.</p>
-            <Link
-              href="/admin"
-              className="mt-2 px-4 py-2 bg-teal-500 hover:bg-teal-400 rounded-lg text-white text-sm font-medium transition-colors"
-            >
-              Go to Admin
-            </Link>
+            <p className="text-white/30 text-sm">Check back later!</p>
           </div>
         )}
       </main>
