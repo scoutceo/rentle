@@ -32,14 +32,14 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  let body: { date: string; apartment_a_id: string; apartment_b_id: string }
+  let body: { date: string; apartment_a_id: string; apartment_b_id: string; round_number?: number }
   try {
     body = await req.json()
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
 
-  const { date, apartment_a_id, apartment_b_id } = body
+  const { date, apartment_a_id, apartment_b_id, round_number = 1 } = body
 
   if (!date || !apartment_a_id || !apartment_b_id) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
 
   const { data, error } = await supabase
     .from('daily_pairs')
-    .insert({ date, apartment_a_id, apartment_b_id })
+    .insert({ date, apartment_a_id, apartment_b_id, round_number })
     .select()
     .single()
 

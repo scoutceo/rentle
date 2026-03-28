@@ -4,39 +4,42 @@ import { supabase } from '@/lib/supabase'
 export async function GET() {
   const today = new Date().toISOString().split('T')[0]
 
-  const { data: pair, error: pairError } = await supabase
+  const { data: pairs, error: pairsError } = await supabase
     .from('daily_pairs')
     .select('*')
     .eq('date', today)
-    .single()
+    .order('round_number', { ascending: true })
 
-  if (pairError || !pair) {
-    return NextResponse.json({ error: 'No pair for today' }, { status: 404 })
+  if (pairsError || !pairs || pairs.length === 0) {
+    return NextResponse.json({ error: 'No pairs for today' }, { status: 404 })
   }
 
-  const [{ data: aptA }, { data: aptB }] = await Promise.all([
-    supabase.from('apartments').select('*').eq('id', pair.apartment_a_id).single(),
-    supabase.from('apartments').select('*').eq('id', pair.apartment_b_id).single(),
-  ])
+  const enriched = await Promise.all(
+    pairs.map(async (pair) => {
+      const [{ data: aptA }, { data: aptB }, { data: votes }] = await Promise.all([
+        supabase.from('apartments').select('*').eq('id', pair.apartment_a_id).single(),
+        supabase.from('apartments').select('*').eq('id', pair.apartment_b_id).single(),
+        supabase.from('votes').select('choice').eq('pair_id', pair.id),
+      ])
 
-  if (!aptA || !aptB) {
+      if (!aptA || !aptB) return null
+
+      return {
+        id: pair.id,
+        date: pair.date,
+        round_number: pair.round_number,
+        apartment_a: aptA,
+        apartment_b: aptB,
+        votes_a: votes?.filter((v) => v.choice === 'A').length ?? 0,
+        votes_b: votes?.filter((v) => v.choice === 'B').length ?? 0,
+      }
+    })
+  )
+
+  const valid = enriched.filter(Boolean)
+  if (valid.length === 0) {
     return NextResponse.json({ error: 'Apartments not found' }, { status: 404 })
   }
 
-  const { data: votes } = await supabase
-    .from('votes')
-    .select('choice')
-    .eq('pair_id', pair.id)
-
-  const votes_a = votes?.filter((v) => v.choice === 'A').length ?? 0
-  const votes_b = votes?.filter((v) => v.choice === 'B').length ?? 0
-
-  return NextResponse.json({
-    id: pair.id,
-    date: pair.date,
-    apartment_a: aptA,
-    apartment_b: aptB,
-    votes_a,
-    votes_b,
-  })
+  return NextResponse.json(valid)
 }

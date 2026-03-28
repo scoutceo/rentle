@@ -37,6 +37,7 @@ export type Apartment = {
 export type DailyPair = {
   id: string
   date: string
+  round_number: number
   apartment_a_id: string
   apartment_b_id: string
   created_at: string

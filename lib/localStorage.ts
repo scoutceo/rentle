@@ -1,6 +1,7 @@
 const VOTES_KEY = 'rentle_votes'
 const STREAK_KEY = 'rentle_streak'
 const LAST_PLAYED_KEY = 'rentle_last_played'
+const GAME_STATE_KEY = 'rentle_game'
 
 export type StoredVote = {
   choice: 'A' | 'B'
@@ -8,6 +9,40 @@ export type StoredVote = {
   correct: boolean
   votes_a: number
   votes_b: number
+}
+
+export type RoundResult = {
+  pair_id: string
+  choice: 'A' | 'B'
+  correct: boolean
+  votes_a: number
+  votes_b: number
+}
+
+export type GameState = {
+  rounds: RoundResult[]
+  complete: boolean
+}
+
+export function getGameState(date: string): GameState | null {
+  if (typeof window === 'undefined') return null
+  try {
+    const all = JSON.parse(localStorage.getItem(GAME_STATE_KEY) || '{}')
+    return all[date] || null
+  } catch {
+    return null
+  }
+}
+
+export function saveGameState(date: string, state: GameState): void {
+  if (typeof window === 'undefined') return
+  try {
+    const all = JSON.parse(localStorage.getItem(GAME_STATE_KEY) || '{}')
+    all[date] = state
+    localStorage.setItem(GAME_STATE_KEY, JSON.stringify(all))
+  } catch {
+    // ignore
+  }
 }
 
 export function getStoredVote(date: string): StoredVote | null {

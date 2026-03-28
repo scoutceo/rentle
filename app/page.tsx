@@ -6,37 +6,44 @@ import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
-async function getTodaysPair(): Promise<PairWithApartments | null> {
+async function getTodaysPairs(): Promise<PairWithApartments[]> {
   const today = new Date().toISOString().split('T')[0]
 
-  const { data: pair } = await supabase
+  const { data: pairs } = await supabase
     .from('daily_pairs')
     .select('*')
     .eq('date', today)
-    .single()
+    .order('round_number', { ascending: true })
 
-  if (!pair) return null
+  if (!pairs || pairs.length === 0) return []
 
-  const [{ data: aptA }, { data: aptB }, { data: votes }] = await Promise.all([
-    supabase.from('apartments').select('*').eq('id', pair.apartment_a_id).single(),
-    supabase.from('apartments').select('*').eq('id', pair.apartment_b_id).single(),
-    supabase.from('votes').select('choice').eq('pair_id', pair.id),
-  ])
+  const enriched = await Promise.all(
+    pairs.map(async (pair) => {
+      const [{ data: aptA }, { data: aptB }, { data: votes }] = await Promise.all([
+        supabase.from('apartments').select('*').eq('id', pair.apartment_a_id).single(),
+        supabase.from('apartments').select('*').eq('id', pair.apartment_b_id).single(),
+        supabase.from('votes').select('choice').eq('pair_id', pair.id),
+      ])
 
-  if (!aptA || !aptB) return null
+      if (!aptA || !aptB) return null
 
-  return {
-    id: pair.id,
-    date: pair.date,
-    apartment_a: aptA,
-    apartment_b: aptB,
-    votes_a: votes?.filter((v) => v.choice === 'A').length ?? 0,
-    votes_b: votes?.filter((v) => v.choice === 'B').length ?? 0,
-  }
+      return {
+        id: pair.id,
+        date: pair.date,
+        apartment_a: aptA,
+        apartment_b: aptB,
+        votes_a: votes?.filter((v) => v.choice === 'A').length ?? 0,
+        votes_b: votes?.filter((v) => v.choice === 'B').length ?? 0,
+      } as PairWithApartments
+    })
+  )
+
+  return enriched.filter((p): p is PairWithApartments => p !== null)
 }
 
 export default async function HomePage() {
-  const pair = await getTodaysPair()
+  const today = new Date().toISOString().split('T')[0]
+  const pairs = await getTodaysPairs()
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -70,13 +77,13 @@ export default async function HomePage() {
           </p>
         </div>
 
-        {pair ? (
-          <GameClient pair={pair} />
+        {pairs.length > 0 ? (
+          <GameClient pairs={pairs} date={today} />
         ) : (
           <div className="flex flex-col items-center justify-center py-24 gap-4">
             <p className="text-4xl">🏠</p>
-            <p className="text-white/60 text-lg">No apartment pair scheduled for today.</p>
-            <p className="text-white/30 text-sm">Check back later or add one in the admin panel.</p>
+            <p className="text-white/60 text-lg">No apartment pairs scheduled for today.</p>
+            <p className="text-white/30 text-sm">Check back later or add some in the admin panel.</p>
             <Link
               href="/admin"
               className="mt-2 px-4 py-2 bg-teal-500 hover:bg-teal-400 rounded-lg text-white text-sm font-medium transition-colors"

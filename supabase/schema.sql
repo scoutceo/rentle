@@ -15,10 +15,12 @@ create table if not exists apartments (
 -- Daily pairs table
 create table if not exists daily_pairs (
   id uuid primary key default gen_random_uuid(),
-  date date not null unique,
+  date date not null,
+  round_number smallint not null default 1,
   apartment_a_id uuid not null references apartments(id),
   apartment_b_id uuid not null references apartments(id),
-  created_at timestamptz default now()
+  created_at timestamptz default now(),
+  unique (date, round_number)
 );
 
 -- Votes table
