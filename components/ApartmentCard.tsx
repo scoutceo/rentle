@@ -32,11 +32,14 @@ export default function ApartmentCard({
 
   return (
     <div
+      onClick={!voted && !disabled ? onVote : undefined}
       className={`relative flex flex-col rounded-2xl overflow-hidden border transition-all duration-300 ${
         chosen && correct
           ? 'border-teal-400 shadow-[0_0_24px_rgba(20,184,166,0.35)]'
           : chosen && !correct
           ? 'border-red-500 shadow-[0_0_24px_rgba(239,68,68,0.25)]'
+          : !voted && !disabled
+          ? 'border-white/10 shadow-lg hover:border-teal-400/50 hover:shadow-[0_0_20px_rgba(20,184,166,0.15)] cursor-pointer'
           : 'border-white/10 shadow-lg'
       } bg-[#1a1a1a]`}
     >
@@ -101,15 +104,9 @@ export default function ApartmentCard({
             </div>
           </div>
         ) : (
-          <button
-            onClick={onVote}
-            disabled={disabled}
-            className="mt-auto w-full py-3 rounded-xl font-semibold text-sm transition-all duration-200
-              bg-teal-500 hover:bg-teal-400 active:scale-[0.98] text-white
-              disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Vote {side}
-          </button>
+          <div className="mt-auto pt-2 flex items-center justify-center gap-1.5 text-teal-400/70 text-sm font-medium">
+            <span>Tap to vote</span>
+          </div>
         )}
       </div>
     </div>
