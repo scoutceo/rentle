@@ -55,7 +55,6 @@ type ModalType = 'how-it-works' | 'about' | null
 function LandingPage({ onPlay, hasPairs }: { onPlay: () => void; hasPairs: boolean }) {
   const [modal, setModal] = useState<ModalType>(null)
   return (
-    <>
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#08080d]">
       {/* Atmospheric blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
@@ -146,10 +145,8 @@ function LandingPage({ onPlay, hasPairs }: { onPlay: () => void; hasPairs: boole
           </a>
         </div>
       </div>
-    </div>
-
-    {/* Modals */}
-    {modal && (
+      {/* Modals — inside container so overflow:hidden doesn't trap fixed overlay */}
+      {modal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4"
           onClick={() => setModal(null)}
@@ -192,7 +189,7 @@ function LandingPage({ onPlay, hasPairs }: { onPlay: () => void; hasPairs: boole
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
 
