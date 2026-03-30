@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
   }
 
   if (authHeader !== `Bearer ${expected}`) {
-    return NextResponse.json({ error: 'Unauthorized', debug: 'secret mismatch' }, { status: 401 })
+    return NextResponse.json({ error: 'Unauthorized', debug: 'secret mismatch', envLength: expected.length }, { status: 401 })
   }
 
   const now = new Date()
