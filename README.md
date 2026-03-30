@@ -89,3 +89,4 @@ Use the admin panel at `/admin` to:
 ## Local Storage
 
 Vote state is persisted in `localStorage` keyed by date, so refreshing keeps your result. Streak is tracked across days.
+
