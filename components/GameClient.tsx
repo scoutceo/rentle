@@ -94,7 +94,7 @@ export default function GameClient({ pairs, date }: Props) {
         const res = await fetch('/api/vote', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ pair_id: pair.id, choice: side }),
+          body: JSON.stringify({ pair_id: pair.id, choice: side, user_id: getOrCreateUserId() }),
         })
         const data = await res.json()
 
