@@ -1,0 +1,140 @@
+{
+  "listings": [
+    {
+      "city": "Chicago",
+      "neighborhood": "Lincoln Park",
+      "address_label": "640 W Wrightwood Ave, Unit 107",
+      "rent_monthly": 1560,
+      "beds": 0,
+      "baths": 1,
+      "sqft": 300,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-brand-new-gut-rehab-in-lincoln/7924391997.html",
+      "source": "craigslist",
+      "source_listing_id": "7924391997",
+      "photo_urls": [
+        "https://images.craigslist.org/00v0v_3wsapWJRHeG_06s04j_600x450.jpg",
+        "https://images.craigslist.org/00T0T_lsFiKsrEmWM_06s04j_600x450.jpg",
+        "https://images.craigslist.org/00l0l_4J75JVy8F1H_06s04j_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Logan Square",
+      "address_label": "Palmer & Spaulding, Chicago, IL 60647",
+      "rent_monthly": 1195,
+      "beds": 0,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-logan-square-heated-palmer/7924267142.html",
+      "source": "craigslist",
+      "source_listing_id": "7924267142",
+      "photo_urls": [
+        "https://images.craigslist.org/01717_cxMm02kTfr6z_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00Q0Q_bCghR0Mx99Cz_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00j0j_htydVUsCmQ2z_0CI0t2_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Logan Square",
+      "address_label": "Palmer & Sawyer, Chicago, IL 60647",
+      "rent_monthly": 1450,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-logan-square-heated-palmer-and/7924266802.html",
+      "source": "craigslist",
+      "source_listing_id": "7924266802",
+      "photo_urls": [
+        "https://images.craigslist.org/00F0F_hC82US4WbNt_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00606_9HDeerpQ3Yj_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00H0H_i9yXhNYDPrg_0c60lw_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Humboldt Park",
+      "address_label": "N Mozart St, Chicago, IL 60622",
+      "rent_monthly": 2675,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-humboldt-park-bed-bath-12/7924240588.html",
+      "source": "craigslist",
+      "source_listing_id": "7924240588",
+      "photo_urls": [
+        "https://images.craigslist.org/00h0h_Y93MsYUhas_0x20oM_600x450.jpg",
+        "https://images.craigslist.org/00B0B_bNBoyqVPGcn_0x20oM_600x450.jpg",
+        "https://images.craigslist.org/00R0R_gf56wN5VYeO_0x20oM_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Lincoln Park",
+      "address_label": "Fremont St, Chicago, IL 60614",
+      "rent_monthly": 2575,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-lincoln-park-walk-up-with-in/7924298366.html",
+      "source": "craigslist",
+      "source_listing_id": "7924298366",
+      "photo_urls": [
+        "https://images.craigslist.org/00g0g_4875n7zT575_0gD0dh_600x450.jpg",
+        "https://images.craigslist.org/00H0H_6DeF6oBzJ1O_0cC091_600x450.jpg",
+        "https://images.craigslist.org/00101_cpGcSYUWUDU_0d3092_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Bucktown",
+      "address_label": "N Elston Ave, Chicago, IL 60614",
+      "rent_monthly": 3578,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-bucktown-2br-2b-perfect-for/7924332329.html",
+      "source": "craigslist",
+      "source_listing_id": "7924332329",
+      "photo_urls": [
+        "https://images.craigslist.org/00Z0Z_6n6SmYaynF0_0m60dS_600x450.jpg",
+        "https://images.craigslist.org/00J0J_6oykIIV0Se1_0m60dS_600x450.jpg",
+        "https://images.craigslist.org/00o0o_bUV8ts8enOK_0hE0b0_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Ukrainian Village",
+      "address_label": "2647 W Iowa St, Chicago, IL 60647",
+      "rent_monthly": 2380,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 1000,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-memorable-bedroom-bath-in/7924153332.html",
+      "source": "craigslist",
+      "source_listing_id": "7924153332",
+      "photo_urls": [
+        "https://images.craigslist.org/00t0t_5bA5nNMVSmr_0gw0b1_600x450.jpg",
+        "https://images.craigslist.org/00c0c_9Qc5rboDybn_0gw0b1_600x450.jpg",
+        "https://images.craigslist.org/00202_29l4LnKBKnE_0gw0b1_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Andersonville",
+      "address_label": "Andersonville, Chicago, IL",
+      "rent_monthly": 2379,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-new-rehab-designed-to-feel-like/7924155814.html",
+      "source": "craigslist",
+      "source_listing_id": "7924155814",
+      "photo_urls": [
+        "https://images.craigslist.org/00Y0Y_dj8XI3A3a4u_0x20m1_600x450.jpg",
+        "https://images.craigslist.org/00303_fIBJbNmAE7r_0x20m1_600x450.jpg",
+        "https://images.craigslist.org/00R0R_2mjabEM1Vso_0x20m1_600x450.jpg"
+      ]
+    }
+  ]
+}

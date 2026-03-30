@@ -1,0 +1,208 @@
+{
+  "listings": [
+    {
+      "city": "New York",
+      "neighborhood": "Harlem / Morningside",
+      "address_label": "121st Street, New York, NY 10027",
+      "rent_monthly": 2150,
+      "beds": 0,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://newyork.craigslist.org/mnh/apa/d/new-york-beautiful-large-studio-steps/7924450873.html",
+      "source": "craigslist",
+      "source_listing_id": "7924450873",
+      "photo_urls": [
+        "https://images.craigslist.org/00N0N_5336rSOy8gO_05O07K_600x450.jpg",
+        "https://images.craigslist.org/00X0X_iwiq55Uj6IW_05O07K_600x450.jpg",
+        "https://images.craigslist.org/00n0n_dvQTCSripNy_05O07K_600x450.jpg"
+      ]
+    },
+    {
+      "city": "New York",
+      "neighborhood": "Harlem",
+      "address_label": "135th St near St. Nicholas Park, New York, NY",
+      "rent_monthly": 2850,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://newyork.craigslist.org/mnh/apa/d/new-york-beautiful-harlem-bedroom-with/7924397146.html",
+      "source": "craigslist",
+      "source_listing_id": "7924397146",
+      "photo_urls": [
+        "https://images.craigslist.org/00e0e_2LaHuKZiX0m_0CI0pj_600x450.jpg",
+        "https://images.craigslist.org/00909_1sSfk92AFo6_0CI0rm_600x450.jpg",
+        "https://images.craigslist.org/00V0V_c8hYLU7f2oP_0CI0pw_600x450.jpg"
+      ]
+    },
+    {
+      "city": "New York",
+      "neighborhood": "East Village",
+      "address_label": "9th St near First & Second Ave, Manhattan, NY 10009",
+      "rent_monthly": 3350,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://newyork.craigslist.org/mnh/apa/d/new-york-just-listed-bright-cozy-one/7924286803.html",
+      "source": "craigslist",
+      "source_listing_id": "7924286803",
+      "photo_urls": [
+        "https://images.craigslist.org/00Q0Q_jyPqFgNQoCc_0CI0t2_600x450.jpg",
+        "https://images.craigslist.org/00I0I_e83ODutnup2_0lM0t2_600x450.jpg",
+        "https://images.craigslist.org/00r0r_1RSQlhQSBFq_0lM0t2_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Los Angeles",
+      "neighborhood": "Silver Lake",
+      "address_label": "1326 Edgecliffe Dr, Los Angeles, CA 90026",
+      "rent_monthly": 2995,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 920,
+      "listing_url": "https://losangeles.craigslist.org/lac/apa/d/los-angeles-bd-ba-apt-in-prime-location/7918548970.html",
+      "source": "craigslist",
+      "source_listing_id": "7918548970",
+      "photo_urls": [
+        "https://images.craigslist.org/00m0m_fg0aCWFmU4U_0CI0t2_600x450.jpg",
+        "https://images.craigslist.org/00l0l_ihGBR8Mjpax_0CI0t2_600x450.jpg",
+        "https://images.craigslist.org/00r0r_4oIt15lAOBZ_0zy0t2_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Los Angeles",
+      "neighborhood": "West Hollywood",
+      "address_label": "1136 Larrabee St, West Hollywood, CA 90069",
+      "rent_monthly": 2190,
+      "beds": 0,
+      "baths": 1,
+      "sqft": 480,
+      "listing_url": "https://losangeles.craigslist.org/sfv/apa/d/west-hollywood-everything-you-want-and/7922292053.html",
+      "source": "craigslist",
+      "source_listing_id": "7922292053",
+      "photo_urls": [
+        "https://images.craigslist.org/00Y0Y_d7FyB5xpNVZ_0g80aM_600x450.jpg",
+        "https://images.craigslist.org/00W0W_bVjVvTDvbMg_0gk0aY_600x450.jpg",
+        "https://images.craigslist.org/00b0b_g6r4C1htxGq_0g80aM_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Los Angeles",
+      "neighborhood": "Sherman Oaks",
+      "address_label": "4333 Stern Ave, Sherman Oaks, CA 91423",
+      "rent_monthly": 2495,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1008,
+      "listing_url": "https://losangeles.craigslist.org/sfv/apa/d/sherman-oaks-spacious-comfortable-1008/7920826774.html",
+      "source": "craigslist",
+      "source_listing_id": "7920826774",
+      "photo_urls": [
+        "https://images.craigslist.org/00e0e_bEN0Lq5GlAX_0rT0iE_600x450.jpg",
+        "https://images.craigslist.org/00u0u_1AmE2G1XwDF_0jA0eK_600x450.jpg",
+        "https://images.craigslist.org/00f0f_kuiEDIoUyQE_0uY0kE_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Logan Square",
+      "address_label": "1931 N Drake Ave, Chicago, IL",
+      "rent_monthly": 1698,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 1000,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/logan-square-br-top-floor-apt/7924469129.html",
+      "source": "craigslist",
+      "source_listing_id": "7924469129",
+      "photo_urls": [
+        "https://images.craigslist.org/00W0W_6O4WQ599Ddb_0jt0t2_600x450.jpg",
+        "https://images.craigslist.org/00404_kRXsyjld77s_0x20oM_600x450.jpg",
+        "https://images.craigslist.org/01717_2iK80tCp36y_0x20oM_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Lakeview East",
+      "address_label": "W Oakdale Ave, Chicago, IL 60657",
+      "rent_monthly": 1815,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-lakeview-east-1bd-wow-heat-hot/7924406351.html",
+      "source": "craigslist",
+      "source_listing_id": "7924406351",
+      "photo_urls": [
+        "https://images.craigslist.org/00E0E_8soGL5Ez5JZ_0oM0x2_600x450.jpg",
+        "https://images.craigslist.org/00v0v_fcL1vdWwTde_0oM0x2_600x450.jpg",
+        "https://images.craigslist.org/00m0m_FFGPKf4ntj_0oM0x2_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Chicago",
+      "neighborhood": "Ravenswood",
+      "address_label": "4537 N Paulina St, Unit 2A, Chicago, IL 60640",
+      "rent_monthly": 1895,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://chicago.craigslist.org/chc/apa/d/chicago-sunny-beauitful-bdr-located-in/7924467755.html",
+      "source": "craigslist",
+      "source_listing_id": "7924467755",
+      "photo_urls": [
+        "https://images.craigslist.org/00S0S_7DI4GxNMsA9_04Q03D_600x450.jpg",
+        "https://images.craigslist.org/00j0j_bMidR248Tyi_0hq0d4_600x450.jpg",
+        "https://images.craigslist.org/00f0f_9aiugykxG4S_0hq0ne_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Austin",
+      "neighborhood": "East Austin",
+      "address_label": "Scottsdale Rd near E Martin Luther King Blvd, Austin, TX 78721",
+      "rent_monthly": 2800,
+      "beds": 5,
+      "baths": 3,
+      "sqft": 1769,
+      "listing_url": "https://austin.craigslist.org/apa/d/austin-spacious-bedroom-home-near-ut/7917356445.html",
+      "source": "craigslist",
+      "source_listing_id": "7917356445",
+      "photo_urls": [
+        "https://images.craigslist.org/00U0U_2Ww4iwAWMu2_0CI0lK_600x450.jpg",
+        "https://images.craigslist.org/00S0S_7QQSSkic4Fw_0CI0pO_600x450.jpg",
+        "https://images.craigslist.org/00a0a_lkfV9aZHaS0_0CI0pO_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Austin",
+      "neighborhood": "Southeast Austin / Dale",
+      "address_label": "Camino Real, Dale, TX 78616",
+      "rent_monthly": 1950,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1174,
+      "listing_url": "https://austin.craigslist.org/apa/d/austin-bedroom-bath-home-for-rent/7923107455.html",
+      "source": "craigslist",
+      "source_listing_id": "7923107455",
+      "photo_urls": [
+        "https://images.craigslist.org/01010_3SdqRWXgyzg_0CI0pO_600x450.jpg",
+        "https://images.craigslist.org/00W0W_7vgV78O9djR_0CI0pO_600x450.jpg",
+        "https://images.craigslist.org/00K0K_ip0TNUIejv1_0CI0pO_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Austin",
+      "neighborhood": "Southeast Austin",
+      "address_label": "Thrasher Lane, Austin, TX 78741",
+      "rent_monthly": 1900,
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1132,
+      "listing_url": "https://austin.craigslist.org/apa/d/austin-bedroom-bath-duplex-for-rent/7923706517.html",
+      "source": "craigslist",
+      "source_listing_id": "7923706517",
+      "photo_urls": [
+        "https://images.craigslist.org/00l0l_3BLnXEyot8Q_0CI0pO_600x450.jpg",
+        "https://images.craigslist.org/00b0b_5Ka6bXwrYTa_0CI0pO_600x450.jpg",
+        "https://images.craigslist.org/00q0q_4nybdRaY1i1_0CI0pO_600x450.jpg"
+      ]
+    }
+  ]
+}
