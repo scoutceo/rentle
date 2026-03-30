@@ -25,7 +25,10 @@ export default function ApartmentCard({
 }: Props) {
   const [photoIndex, setPhotoIndex] = useState(0)
   const touchStartX = useRef<number | null>(null)
+  const touchStartY = useRef<number | null>(null)
   const touchDeltaX = useRef(0)
+  const touchDeltaY = useRef(0)
+  const swipeHandled = useRef(false)
 
   const photos = useMemo(() => {
     const urls = apartment.photo_urls?.filter(Boolean) ?? []
@@ -48,6 +51,10 @@ export default function ApartmentCard({
   }
 
   const handleCardClick = () => {
+    if (swipeHandled.current) {
+      swipeHandled.current = false
+      return
+    }
     if (!voted && !disabled) onVote()
   }
 
@@ -64,19 +71,27 @@ export default function ApartmentCard({
       }}
       onTouchStart={(event) => {
         touchStartX.current = event.touches[0]?.clientX ?? null
+        touchStartY.current = event.touches[0]?.clientY ?? null
         touchDeltaX.current = 0
+        touchDeltaY.current = 0
+        swipeHandled.current = false
       }}
       onTouchMove={(event) => {
-        if (touchStartX.current === null) return
+        if (touchStartX.current === null || touchStartY.current === null) return
         touchDeltaX.current = (event.touches[0]?.clientX ?? 0) - touchStartX.current
+        touchDeltaY.current = (event.touches[0]?.clientY ?? 0) - touchStartY.current
       }}
       onTouchEnd={() => {
-        if (Math.abs(touchDeltaX.current) > 40) {
+        const horizontalSwipe = Math.abs(touchDeltaX.current) > 35 && Math.abs(touchDeltaX.current) > Math.abs(touchDeltaY.current) * 1.2
+        if (horizontalSwipe) {
+          swipeHandled.current = true
           if (touchDeltaX.current < 0) goNext()
           else goPrev()
         }
         touchStartX.current = null
+        touchStartY.current = null
         touchDeltaX.current = 0
+        touchDeltaY.current = 0
       }}
       className={`group relative isolate w-full overflow-hidden rounded-[1.75rem] border text-left transition-all duration-300 ${
         chosen && correct
@@ -160,22 +175,22 @@ export default function ApartmentCard({
           </div>
         )}
 
-        <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-          <div className="rounded-[1.35rem] border border-white/10 bg-black/28 p-4 backdrop-blur-md">
+        <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
+          <div className="rounded-[1.1rem] sm:rounded-[1.35rem] border border-white/10 bg-black/28 p-3 sm:p-4 backdrop-blur-md">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-[1.9rem] font-black leading-none tracking-tight text-white sm:text-[2.2rem]">
+                <p className="text-[1.55rem] font-black leading-none tracking-tight text-white sm:text-[2.2rem]">
                   {formatRent(apartment.rent_monthly)}
-                  <span className="ml-1 text-base font-medium text-white/55 sm:text-lg">/mo</span>
+                  <span className="ml-1 text-sm font-medium text-white/55 sm:text-lg">/mo</span>
                 </p>
-                <p className="mt-2 text-sm text-white/80 sm:text-[0.95rem]">
+                <p className="mt-1.5 text-[13px] text-white/80 sm:mt-2 sm:text-[0.95rem]">
                   {formatBeds(apartment.beds)}
-                  <span className="mx-2 text-white/30">·</span>
+                  <span className="mx-1.5 sm:mx-2 text-white/30">·</span>
                   {apartment.baths} bath
-                  <span className="mx-2 text-white/30">·</span>
+                  <span className="mx-1.5 sm:mx-2 text-white/30">·</span>
                   {apartment.sqft.toLocaleString()} sqft
                 </p>
-                <p className="mt-1 truncate text-xs text-white/50 sm:text-sm">
+                <p className="mt-1 truncate text-[11px] text-white/50 sm:text-sm">
                   {apartment.address_label}
                 </p>
               </div>
@@ -212,9 +227,9 @@ export default function ApartmentCard({
                 </div>
               </div>
             ) : (
-              <div className="mt-4 flex items-center justify-between text-sm font-medium text-white/70">
+              <div className="mt-3 sm:mt-4 flex items-center justify-between text-xs sm:text-sm font-medium text-white/70">
                 <span>{photos.length > 1 ? 'Swipe or tap arrows for more photos' : 'Tap to vote'}</span>
-                <span className="rounded-full border border-white/10 bg-white/8 px-2.5 py-1 text-xs uppercase tracking-[0.14em] text-teal-300/90">
+                <span className="rounded-full border border-white/10 bg-white/8 px-2 py-1 text-[10px] sm:px-2.5 sm:text-xs uppercase tracking-[0.14em] text-teal-300/90">
                   Live pick
                 </span>
               </div>
