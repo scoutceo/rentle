@@ -5,8 +5,12 @@ export async function GET(req: NextRequest) {
   const authHeader = req.headers.get('authorization')
   const expected = process.env.CRON_SECRET
 
-  if (!expected || authHeader !== `Bearer ${expected}`) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!expected) {
+    return NextResponse.json({ error: 'Unauthorized', debug: 'CRON_SECRET not set in environment' }, { status: 401 })
+  }
+
+  if (authHeader !== `Bearer ${expected}`) {
+    return NextResponse.json({ error: 'Unauthorized', debug: 'secret mismatch' }, { status: 401 })
   }
 
   const now = new Date()
