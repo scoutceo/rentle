@@ -325,7 +325,7 @@ function ScoreScreen({ results, pairs, date, streak }: ScoreScreenProps) {
       {/* Share + CTA */}
       <div className="flex flex-col items-center gap-3">
         <ShareButton date={date} results={results} score={score} total={total} streak={streak} />
-        <p className="text-white/30 text-sm">Come back tomorrow for 5 new pairs!</p>
+        <p className="text-white/30 text-sm">See you tomorrow!</p>
       </div>
     </div>
   )

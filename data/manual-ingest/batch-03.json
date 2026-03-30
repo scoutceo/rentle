@@ -1,0 +1,327 @@
+{
+  "listings": [
+    {
+      "city": "Miami",
+      "neighborhood": "Brickell",
+      "address_label": "SLS Brickell, Miami, FL 33130",
+      "rent_monthly": 3400,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 649,
+      "listing_url": "https://miami.craigslist.org/mdc/apa/d/miami-bedroom-bath-sls-brickell-great/7924493492.html",
+      "source": "craigslist",
+      "source_listing_id": "7924493492",
+      "photo_urls": [
+        "https://images.craigslist.org/01010_6AtfmIG3PPt_0pO0hc_600x450.jpg",
+        "https://images.craigslist.org/00a0a_iwzJiBxRfoz_0pO0hc_600x450.jpg",
+        "https://images.craigslist.org/00N0N_2QXPwUK989j_0pO0hc_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Miami",
+      "neighborhood": "South Beach",
+      "address_label": "South of Fifth, South Beach, Miami Beach, FL",
+      "rent_monthly": 3750,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 747,
+      "listing_url": "https://miami.craigslist.org/mdc/apa/d/miami-beach-remodeled-1-apart-with/7924491144.html",
+      "source": "craigslist",
+      "source_listing_id": "7924491144",
+      "photo_urls": [
+        "https://images.craigslist.org/00p0p_6PiQM3cUNxD_02x03A_600x450.jpg",
+        "https://images.craigslist.org/00808_1prl4RGRJMn_04M03A_600x450.jpg",
+        "https://images.craigslist.org/00T0T_eA8CKtw0LyY_04M03A_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Miami",
+      "neighborhood": "South Beach",
+      "address_label": "Lincoln Rd, South Beach, Miami Beach, FL",
+      "rent_monthly": 2850,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 820,
+      "listing_url": "https://miami.craigslist.org/mdc/apa/d/miami-beach-cozy-1-apart-at-lincoln-rd/7924485153.html",
+      "source": "craigslist",
+      "source_listing_id": "7924485153",
+      "photo_urls": [
+        "https://images.craigslist.org/00C0C_koOkwGTbqzA_04k03A_600x450.jpg",
+        "https://images.craigslist.org/00P0P_1xpiMMSmjlK_04M03A_600x450.jpg",
+        "https://images.craigslist.org/01717_4SW1ysuzIJ6_04M03A_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Seattle",
+      "neighborhood": "Ballard",
+      "address_label": "1139 NW Market Street, Seattle, WA 98107",
+      "rent_monthly": 3195,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 904,
+      "listing_url": "https://seattle.craigslist.org/see/apa/d/seattle-modern-bedroom-in-the-heart-of/7924495044.html",
+      "source": "craigslist",
+      "source_listing_id": "7924495044",
+      "photo_urls": [
+        "https://images.craigslist.org/00202_4uWzLiZa3G4_07a05a_600x450.jpg",
+        "https://images.craigslist.org/00N0N_jKFNwp9cJAf_0eZ0at_600x450.jpg",
+        "https://images.craigslist.org/00U0U_gp11cwEIuOB_08I06i_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Seattle",
+      "neighborhood": "Belltown",
+      "address_label": "303 Battery St., Seattle, WA 98121",
+      "rent_monthly": 2425,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 560,
+      "listing_url": "https://seattle.craigslist.org/see/apa/d/seattle-eco-friendly-br-oasis-in/7924495312.html",
+      "source": "craigslist",
+      "source_listing_id": "7924495312",
+      "photo_urls": [
+        "https://images.craigslist.org/00o0o_fW54dU033JW_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00f0f_3k3I2lK1I90_0jm0aS_600x450.jpg",
+        "https://images.craigslist.org/00u0u_kf7KaO1dmqM_0jm0cU_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Seattle",
+      "neighborhood": "Belltown",
+      "address_label": "2226 Elliott Ave, Seattle, WA 98121",
+      "rent_monthly": 2695,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 900,
+      "listing_url": "https://seattle.craigslist.org/see/apa/d/seattle-best-floorplan-for-room-mates/7924014068.html",
+      "source": "craigslist",
+      "source_listing_id": "7924014068",
+      "photo_urls": [
+        "https://images.craigslist.org/00T0T_iVIrcwLVUMw_0cU08B_600x450.jpg",
+        "https://images.craigslist.org/00L0L_1wqtHPMhUON_09G07g_600x450.jpg",
+        "https://images.craigslist.org/01111_gDodAHswC3V_09G07g_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Denver",
+      "neighborhood": "Capitol Hill",
+      "address_label": "1350 N Grant Street, Denver, CO 80203",
+      "rent_monthly": 2076,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 1029,
+      "listing_url": "https://denver.craigslist.org/apa/d/denver-experience-the-best-of-denvers/7924495872.html",
+      "source": "craigslist",
+      "source_listing_id": "7924495872",
+      "photo_urls": [
+        "https://images.craigslist.org/00l0l_eLaKgp7un6G_0id0c6_600x450.jpg",
+        "https://images.craigslist.org/00S0S_chhKxoi9zqU_0cT08c_600x450.jpg",
+        "https://images.craigslist.org/00Q0Q_6FEkRW3t3pd_0cT08A_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Denver",
+      "neighborhood": "Dayton Triangle",
+      "address_label": "1250 S Dayton Ct., Denver, CO 80247",
+      "rent_monthly": 1650,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1093,
+      "listing_url": "https://denver.craigslist.org/apa/d/denver-redesigned-br-ba-new-kitchen/7924498270.html",
+      "source": "craigslist",
+      "source_listing_id": "7924498270",
+      "photo_urls": [
+        "https://images.craigslist.org/00Q0Q_iB8JuhrR3mX_0ak07K_600x450.jpg",
+        "https://images.craigslist.org/00e0e_j7rwCDzVw1x_0ak07K_600x450.jpg",
+        "https://images.craigslist.org/00404_adLfB5iccIk_0ak07K_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Denver",
+      "neighborhood": "City Park",
+      "address_label": "1600 Fillmore Street, Denver, CO 80206",
+      "rent_monthly": 1925,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 720,
+      "listing_url": "https://denver.craigslist.org/apa/d/denver-you-will-love-this-bed-bath/7924498277.html",
+      "source": "craigslist",
+      "source_listing_id": "7924498277",
+      "photo_urls": [
+        "https://images.craigslist.org/00j0j_1sNWyDTgAdm_0dI099_600x450.jpg",
+        "https://images.craigslist.org/01313_7T5Jo0SYQ20_0dI099_600x450.jpg",
+        "https://images.craigslist.org/00m0m_digq7Oi8TU5_0dI099_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Nashville",
+      "neighborhood": "Germantown",
+      "address_label": "1100 3rd Ave N, Nashville, TN 37208",
+      "rent_monthly": 2890,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1309,
+      "listing_url": "https://nashville.craigslist.org/apa/d/nashville-ultimate-kitchens-quartz/7924094121.html",
+      "source": "craigslist",
+      "source_listing_id": "7924094121",
+      "photo_urls": [
+        "https://images.craigslist.org/00f0f_b51dAosy1um_0jm0cT_600x450.jpg",
+        "https://images.craigslist.org/00808_8TtYWfHbyrS_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00J0J_3GoDUD3xoCn_0jm0cU_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Nashville",
+      "neighborhood": "Germantown",
+      "address_label": "1100 3rd Ave N, Unit 1BR, Nashville, TN 37208",
+      "rent_monthly": 1640,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 624,
+      "listing_url": "https://nashville.craigslist.org/apa/d/nashville-stash-your-stuff-in-style/7924448632.html",
+      "source": "craigslist",
+      "source_listing_id": "7924448632",
+      "photo_urls": [
+        "https://images.craigslist.org/00J0J_3GoDUD3xoCn_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/01717_3WRWWnFNQK0_0jA0d8_600x450.jpg",
+        "https://images.craigslist.org/00E0E_cU7oCtcvbHC_0pO0he_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Nashville",
+      "neighborhood": "Germantown",
+      "address_label": "1100 3rd Ave N, Studio, Nashville, TN 37208",
+      "rent_monthly": 1750,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 626,
+      "listing_url": "https://nashville.craigslist.org/apa/d/nashville-live-in-luxury-porcelain-tile/7923635351.html",
+      "source": "craigslist",
+      "source_listing_id": "7923635351",
+      "photo_urls": [
+        "https://images.craigslist.org/00303_fgSPK2hzRYM_0jm0cT_600x450.jpg",
+        "https://images.craigslist.org/00c0c_bOvj4jqkc29_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00v0v_44Hs2iE3sZf_0jm0cT_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Boston",
+      "neighborhood": "East Boston",
+      "address_label": "Maverick Street, East Boston, MA 02128",
+      "rent_monthly": 2800,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://boston.craigslist.org/gbs/apa/d/boston-two-bedroom-with-boston-views/7924443713.html",
+      "source": "craigslist",
+      "source_listing_id": "7924443713",
+      "photo_urls": [
+        "https://images.craigslist.org/00M0M_2sszwaQPi0C_0CI0t2_600x450.jpg",
+        "https://images.craigslist.org/00b0b_exXXXIdcJlV_0lM0t2_600x450.jpg",
+        "https://images.craigslist.org/00x0x_aA8Gbc9cp4P_0lM0t2_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Boston",
+      "neighborhood": "Cambridge",
+      "address_label": "Callender St, Cambridge, MA 02139",
+      "rent_monthly": 3500,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://boston.craigslist.org/gbs/apa/d/cambridge-amazing-hbs-central-sq-bed/7924496166.html",
+      "source": "craigslist",
+      "source_listing_id": "7924496166",
+      "photo_urls": [
+        "https://images.craigslist.org/01010_lfYE1fYmQdD_0gA0gy_600x450.jpg",
+        "https://images.craigslist.org/00y0y_kVSLe6rg1nj_0gF0gD_600x450.jpg",
+        "https://images.craigslist.org/00D0D_8ZLSoFV3vy8_0gn0fX_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Atlanta",
+      "neighborhood": "Cascade",
+      "address_label": "5328 Cascade Run, Atlanta, GA 30336",
+      "rent_monthly": 2350,
+      "beds": 3,
+      "baths": 3,
+      "sqft": 1520,
+      "listing_url": "https://atlanta.craigslist.org/atl/apa/d/atlanta-level-townhome-bedroom-35/7922518149.html",
+      "source": "craigslist",
+      "source_listing_id": "7922518149",
+      "photo_urls": [
+        "https://images.craigslist.org/00q0q_3CjX7ZQUQF6_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00r0r_9mvpXnGQB2a_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/01414_ftrIprd4K4W_0t20CI_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Atlanta",
+      "neighborhood": "Roswell",
+      "address_label": "1300 Gran Crique Dr, Roswell, GA 30076",
+      "rent_monthly": 1460,
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1635,
+      "listing_url": "https://atlanta.craigslist.org/nat/apa/d/roswell-convenient-full-size-washer/7922392338.html",
+      "source": "craigslist",
+      "source_listing_id": "7922392338",
+      "photo_urls": [
+        "https://images.craigslist.org/00Y0Y_2Mbr25WQBhJ_0uY0kE_600x450.jpg",
+        "https://images.craigslist.org/00606_6X4Dmb1Kpbj_10I0Le_600x450.jpg",
+        "https://images.craigslist.org/00S0S_fZhWWQAWWyQ_0uY0kE_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Phoenix",
+      "neighborhood": "Scottsdale",
+      "address_label": "9340 E Redfield Rd, Scottsdale, AZ 85260",
+      "rent_monthly": 1984,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1185,
+      "listing_url": "https://phoenix.craigslist.org/evl/apa/d/scottsdale-door-to-door-trash-pickup/7924498521.html",
+      "source": "craigslist",
+      "source_listing_id": "7924498521",
+      "photo_urls": [
+        "https://images.craigslist.org/01414_53xyrgGBV1Q_09G0cU_600x450.jpg",
+        "https://images.craigslist.org/00B0B_e6wWhaMEaHs_0jl0cU_600x450.jpg",
+        "https://images.craigslist.org/00s0s_kfqu3j5N0u9_0jm0cU_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Phoenix",
+      "neighborhood": "Gilbert",
+      "address_label": "4210 E Williams Field Rd., Gilbert, AZ 85295",
+      "rent_monthly": 2495,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 1266,
+      "listing_url": "https://phoenix.craigslist.org/evl/apa/d/gilbert-granite-countertops-stainless/7924486295.html",
+      "source": "craigslist",
+      "source_listing_id": "7924486295",
+      "photo_urls": [
+        "https://images.craigslist.org/00R0R_b1CJcDK360U_0cU09G_600x450.jpg",
+        "https://images.craigslist.org/00B0B_8WR0g1OaIOh_0cU09G_600x450.jpg",
+        "https://images.craigslist.org/00202_5uQRGxcVreM_0cU09G_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Phoenix",
+      "neighborhood": "Tempe",
+      "address_label": "1221 Broadway Road, Tempe, AZ 85282",
+      "rent_monthly": 2363,
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1220,
+      "listing_url": "https://phoenix.craigslist.org/evl/apa/d/tempe-elegance-in-every-detail-dive/7924497326.html",
+      "source": "craigslist",
+      "source_listing_id": "7924497326",
+      "photo_urls": [
+        "https://images.craigslist.org/01717_dteoha4nN75_0jA0d8_600x450.jpg",
+        "https://images.craigslist.org/00N0N_km1cT5XIY6p_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00E0E_7u977axKsgB_0jm0cU_600x450.jpg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "listings": [
+    {
+      "city": "Portland",
+      "neighborhood": "John's Landing",
+      "address_label": "444 S Boundary Street, Portland, OR 97239",
+      "rent_monthly": 1700,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 586,
+      "listing_url": "https://portland.craigslist.org/mlt/apa/d/portland-stunning-willamette-views/7924500148.html",
+      "source": "craigslist",
+      "source_listing_id": "7924500148",
+      "photo_urls": [
+        "https://images.craigslist.org/00U0U_g2CbRe1cNq9_0jf0cL_600x450.jpg",
+        "https://images.craigslist.org/00L0L_4W4FgzqRTsa_0jg0cP_600x450.jpg",
+        "https://images.craigslist.org/00m0m_6FNxtSznoqh_0jb0cJ_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Portland",
+      "neighborhood": "Slabtown / NW Portland",
+      "address_label": "1885 NW Quimby St, Portland, OR 97209",
+      "rent_monthly": 1800,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 612,
+      "listing_url": "https://portland.craigslist.org/mlt/apa/d/portland-limited-time-special-of-weeks/7924497562.html",
+      "source": "craigslist",
+      "source_listing_id": "7924497562",
+      "photo_urls": [
+        "https://images.craigslist.org/00J0J_4ji0EvZRp4j_0ak07K_600x450.jpg",
+        "https://images.craigslist.org/00R0R_2vRXAX5TiJG_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00Z0Z_d8x5rstqMqe_0ak07K_600x450.jpg"
+      ]
+    },
+    {
+      "city": "San Diego",
+      "neighborhood": "East Village / Downtown",
+      "address_label": "1450 Market Street, San Diego, CA 92101",
+      "rent_monthly": 3819,
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1306,
+      "listing_url": "https://sandiego.craigslist.org/csd/apa/d/san-diego-3bed-2bath-downtown-ready-for/7924499521.html",
+      "source": "craigslist",
+      "source_listing_id": "7924499521",
+      "photo_urls": [
+        "https://images.craigslist.org/00F0F_lQIogY6nyrC_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00T0T_3IVvXI8435Z_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/01313_bydMxlP8Ma_0jm0cU_600x450.jpg"
+      ]
+    },
+    {
+      "city": "San Diego",
+      "neighborhood": "Pacific Beach",
+      "address_label": "3996 Shasta Street, San Diego, CA 92109",
+      "rent_monthly": 4300,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1073,
+      "listing_url": "https://sandiego.craigslist.org/csd/apa/d/san-diego-off-street-parking-package/7924498623.html",
+      "source": "craigslist",
+      "source_listing_id": "7924498623",
+      "photo_urls": [
+        "https://images.craigslist.org/00F0F_lQIogY6nyrC_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00T0T_3IVvXI8435Z_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/01313_bydMxlP8Ma_0jm0cU_600x450.jpg"
+      ]
+    },
+    {
+      "city": "San Diego",
+      "neighborhood": "Del Mar",
+      "address_label": "519 Stratford Ct., Del Mar, CA 92014",
+      "rent_monthly": 3800,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 812,
+      "listing_url": "https://sandiego.craigslist.org/nsd/apa/d/solana-beach-location-location-location/7921864614.html",
+      "source": "craigslist",
+      "source_listing_id": "7921864614",
+      "photo_urls": [
+        "https://images.craigslist.org/00i0i_itEjf0cMPOB_0oM0gw_600x450.jpg",
+        "https://images.craigslist.org/00J0J_evQlOPQW8p4_0CI0t2_600x450.jpg",
+        "https://images.craigslist.org/00S0S_3K0M6aa1h3O_0CI0t2_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Minneapolis",
+      "neighborhood": "Uptown",
+      "address_label": "2507 Emerson Ave S., Minneapolis, MN 55405",
+      "rent_monthly": 1200,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://minneapolis.craigslist.org/hnp/apa/d/minneapolis-cozy-2br-in-uptown-prime/7924481614.html",
+      "source": "craigslist",
+      "source_listing_id": "7924481614",
+      "photo_urls": [
+        "https://images.craigslist.org/00505_wztky9ibmQ_0uY0ne_600x450.jpg",
+        "https://images.craigslist.org/00L0L_dwOFGklt6zP_0oM0gw_600x450.jpg",
+        "https://images.craigslist.org/00E0E_iNrxwtO08qS_0oM0gw_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Minneapolis",
+      "neighborhood": "Downtown",
+      "address_label": "1117 Marquette Ave., Minneapolis, MN 55403",
+      "rent_monthly": 1397,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 742,
+      "listing_url": "https://minneapolis.craigslist.org/hnp/apa/d/minneapolis-downtown-convenience-modern/7924487124.html",
+      "source": "craigslist",
+      "source_listing_id": "7924487124",
+      "photo_urls": [
+        "https://images.craigslist.org/00I0I_urhv0rbEzY_0jm0cV_600x450.jpg",
+        "https://images.craigslist.org/00h0h_dB01EMzlTnu_0jm0cU_600x450.jpg",
+        "https://images.craigslist.org/00j0j_d08hP30h2U0_0jm0cV_600x450.jpg"
+      ]
+    },
+    {
+      "city": "Minneapolis",
+      "neighborhood": "Uptown / Whittier",
+      "address_label": "1935 Bryant Ave S., Minneapolis, MN 55403",
+      "rent_monthly": 1425,
+      "beds": 1,
+      "baths": 1,
+      "sqft": 0,
+      "listing_url": "https://minneapolis.craigslist.org/hnp/apa/d/minneapolis-spacious-1br-modern-updated/7924481370.html",
+      "source": "craigslist",
+      "source_listing_id": "7924481370",
+      "photo_urls": [
+        "https://images.craigslist.org/00K0K_hAZu34nyZgP_0CI0t2_600x450.jpg",
+        "https://images.craigslist.org/00U0U_3tzrVOSl47N_1320MM_600x450.jpg",
+        "https://images.craigslist.org/00y0y_4NCtd6vj7Ku_1320MM_600x450.jpg"
+      ]
+    }
+  ]
+}

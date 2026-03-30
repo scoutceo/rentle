@@ -50,8 +50,12 @@ export default function HomeWrapper({ pairs, date }: Props) {
   return <LandingPage onPlay={() => setInGame(true)} hasPairs={pairs.length > 0} />
 }
 
+type ModalType = 'how-it-works' | 'about' | null
+
 function LandingPage({ onPlay, hasPairs }: { onPlay: () => void; hasPairs: boolean }) {
+  const [modal, setModal] = useState<ModalType>(null)
   return (
+    <>
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#08080d]">
       {/* Atmospheric blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
@@ -130,14 +134,65 @@ function LandingPage({ onPlay, hasPairs }: { onPlay: () => void; hasPairs: boole
 
         {/* Footer links */}
         <div className="flex items-center gap-3 text-white/20 text-xs">
-          <button className="hover:text-white/45 transition-colors">How it works</button>
+          <button onClick={() => setModal('how-it-works')} className="hover:text-white/45 transition-colors">How it works</button>
           <span aria-hidden>·</span>
-          <button className="hover:text-white/45 transition-colors">About</button>
+          <button onClick={() => setModal('about')} className="hover:text-white/45 transition-colors">About</button>
           <span aria-hidden>·</span>
-          <button className="hover:text-white/45 transition-colors">Suggest a listing</button>
+          <a
+            href="mailto:hello@rentle.lol?subject=Listing%20Suggestion&body=City%3A%0ANeighborhood%3A%0ALink%3A%0ARent%3A%0ABeds%2FBaths%3A"
+            className="hover:text-white/45 transition-colors"
+          >
+            Suggest a listing
+          </a>
         </div>
       </div>
     </div>
+
+    {/* Modals */}
+    {modal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4"
+          onClick={() => setModal(null)}
+        >
+          <div
+            className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-6 max-w-sm w-full flex flex-col gap-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {modal === 'how-it-works' && (
+              <>
+                <h2 className="text-white font-bold text-lg">How it works</h2>
+                <ol className="text-white/60 text-sm flex flex-col gap-2 list-decimal list-inside">
+                  <li>You get 5 real apartment matchups per day.</li>
+                  <li>For each pair, pick which apartment you think offers better value.</li>
+                  <li>After voting, see how the crowd voted.</li>
+                  <li>You&apos;re right if you picked with the majority.</li>
+                  <li>Come back daily to keep your streak alive.</li>
+                </ol>
+                <p className="text-white/30 text-xs">All listings are sourced from real rental markets.</p>
+              </>
+            )}
+            {modal === 'about' && (
+              <>
+                <h2 className="text-white font-bold text-lg">About Rentle</h2>
+                <p className="text-white/60 text-sm">
+                  Rentle is a daily apartment value game. Every day, five real apartments go head to head. You vote on which is better value — then see if the crowd agrees.
+                </p>
+                <p className="text-white/60 text-sm">
+                  Listings are sourced from real rental markets across the US and refreshed regularly.
+                </p>
+                <p className="text-white/30 text-xs">Built by rentle.lol</p>
+              </>
+            )}
+            <button
+              onClick={() => setModal(null)}
+              className="mt-2 text-white/40 hover:text-white/70 text-sm transition-colors self-end"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
