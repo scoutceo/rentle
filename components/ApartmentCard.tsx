@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { useMemo, useRef, useState } from 'react'
 import { Apartment } from '@/lib/supabase'
 
 type Props = {
@@ -22,6 +23,15 @@ export default function ApartmentCard({
   onVote,
   disabled,
 }: Props) {
+  const [photoIndex, setPhotoIndex] = useState(0)
+  const touchStartX = useRef<number | null>(null)
+  const touchDeltaX = useRef(0)
+
+  const photos = useMemo(() => {
+    const urls = apartment.photo_urls?.filter(Boolean) ?? []
+    return urls.length > 0 ? urls : [apartment.photo_url]
+  }, [apartment.photo_url, apartment.photo_urls])
+
   const formatRent = (r: number) => '$' + r.toLocaleString()
 
   const formatBeds = (b: number) =>
@@ -29,11 +39,45 @@ export default function ApartmentCard({
 
   const cityLabel = apartment.city === 'New York City' ? 'NYC' : apartment.city
 
+  const goPrev = () => {
+    setPhotoIndex((current) => (current === 0 ? photos.length - 1 : current - 1))
+  }
+
+  const goNext = () => {
+    setPhotoIndex((current) => (current === photos.length - 1 ? 0 : current + 1))
+  }
+
+  const handleCardClick = () => {
+    if (!voted && !disabled) onVote()
+  }
+
   return (
-    <button
-      type="button"
-      onClick={!voted && !disabled ? onVote : undefined}
-      disabled={voted || disabled}
+    <div
+      role="button"
+      tabIndex={voted || disabled ? -1 : 0}
+      onClick={handleCardClick}
+      onKeyDown={(event) => {
+        if ((event.key === 'Enter' || event.key === ' ') && !voted && !disabled) {
+          event.preventDefault()
+          onVote()
+        }
+      }}
+      onTouchStart={(event) => {
+        touchStartX.current = event.touches[0]?.clientX ?? null
+        touchDeltaX.current = 0
+      }}
+      onTouchMove={(event) => {
+        if (touchStartX.current === null) return
+        touchDeltaX.current = (event.touches[0]?.clientX ?? 0) - touchStartX.current
+      }}
+      onTouchEnd={() => {
+        if (Math.abs(touchDeltaX.current) > 40) {
+          if (touchDeltaX.current < 0) goNext()
+          else goPrev()
+        }
+        touchStartX.current = null
+        touchDeltaX.current = 0
+      }}
       className={`group relative isolate w-full overflow-hidden rounded-[1.75rem] border text-left transition-all duration-300 ${
         chosen && correct
           ? 'border-teal-400 shadow-[0_0_28px_rgba(20,184,166,0.35)]'
@@ -46,7 +90,7 @@ export default function ApartmentCard({
     >
       <div className="relative aspect-[5/6] w-full bg-[#111]">
         <Image
-          src={apartment.photo_url}
+          src={photos[photoIndex]}
           alt={apartment.address_label}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -65,10 +109,48 @@ export default function ApartmentCard({
               {cityLabel}
             </p>
           </div>
-          <div className="rounded-full border border-white/15 bg-black/35 px-2.5 py-1 text-[11px] font-medium text-white/80 backdrop-blur-md sm:text-xs">
-            {apartment.sqft.toLocaleString()} sqft
+          <div className="flex items-center gap-2">
+            {photos.length > 1 && (
+              <div className="rounded-full border border-white/15 bg-black/35 px-2 py-1 text-[11px] font-medium text-white/80 backdrop-blur-md sm:text-xs">
+                {photoIndex + 1}/{photos.length}
+              </div>
+            )}
+            <div className="rounded-full border border-white/15 bg-black/35 px-2.5 py-1 text-[11px] font-medium text-white/80 backdrop-blur-md sm:text-xs">
+              {apartment.sqft.toLocaleString()} sqft
+            </div>
           </div>
         </div>
+
+        {photos.length > 1 && (
+          <>
+            <button
+              type="button"
+              aria-label="Previous photo"
+              onClick={(event) => {
+                event.stopPropagation()
+                goPrev()
+              }}
+              className="absolute left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white/80 backdrop-blur-md transition hover:bg-black/50"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Next photo"
+              onClick={(event) => {
+                event.stopPropagation()
+                goNext()
+              }}
+              className="absolute right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white/80 backdrop-blur-md transition hover:bg-black/50"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </>
+        )}
 
         {voted && chosen && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/10">
@@ -99,6 +181,17 @@ export default function ApartmentCard({
               </div>
             </div>
 
+            {photos.length > 1 && (
+              <div className="mt-3 flex items-center justify-center gap-1.5">
+                {photos.map((_, index) => (
+                  <span
+                    key={index}
+                    className={`h-1.5 rounded-full transition-all ${index === photoIndex ? 'w-5 bg-white' : 'w-1.5 bg-white/35'}`}
+                  />
+                ))}
+              </div>
+            )}
+
             {voted ? (
               <div className="mt-4">
                 <div className="mb-2 flex items-center justify-between text-sm">
@@ -120,7 +213,7 @@ export default function ApartmentCard({
               </div>
             ) : (
               <div className="mt-4 flex items-center justify-between text-sm font-medium text-white/70">
-                <span>Tap to vote</span>
+                <span>{photos.length > 1 ? 'Swipe or tap arrows for more photos' : 'Tap to vote'}</span>
                 <span className="rounded-full border border-white/10 bg-white/8 px-2.5 py-1 text-xs uppercase tracking-[0.14em] text-teal-300/90">
                   Live pick
                 </span>
@@ -129,6 +222,6 @@ export default function ApartmentCard({
           </div>
         </div>
       </div>
-    </button>
+    </div>
   )
 }

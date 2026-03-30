@@ -31,6 +31,7 @@ export type Apartment = {
   baths: number
   sqft: number
   photo_url: string
+  photo_urls?: string[] | null
   created_at: string
 }
 

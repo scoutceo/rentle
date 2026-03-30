@@ -210,6 +210,7 @@ export default function GameClient({ pairs, date }: Props) {
       {/* Cards grid */}
       <div className="relative w-full grid grid-cols-1 items-center gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-5">
         <ApartmentCard
+          key={pair.apartment_a.id}
           apartment={pair.apartment_a}
           voted={voted}
           chosen={choice === 'A'}
@@ -229,6 +230,7 @@ export default function GameClient({ pairs, date }: Props) {
         </div>
 
         <ApartmentCard
+          key={pair.apartment_b.id}
           apartment={pair.apartment_b}
           voted={voted}
           chosen={choice === 'B'}

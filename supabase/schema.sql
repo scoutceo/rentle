@@ -9,6 +9,7 @@ create table if not exists apartments (
   baths numeric(3,1) not null,
   sqft integer not null,
   photo_url text not null,
+  photo_urls text[],
   created_at timestamptz default now()
 );
 
