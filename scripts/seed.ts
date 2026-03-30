@@ -256,22 +256,35 @@ const dailyPairDefs = [
 async function seed() {
   console.log('🌱 Seeding apartments...')
 
-  const { data: insertedApts, error: aptError } = await supabase
+  const { error: aptUpsertError } = await supabase
     .from('apartments')
-    .insert(apartments)
-    .select()
+    .upsert(apartments, { onConflict: 'city,neighborhood,address_label', ignoreDuplicates: true })
 
-  if (aptError) {
-    console.error('Error inserting apartments:', aptError.message)
+  if (aptUpsertError) {
+    console.error('Error upserting apartments:', aptUpsertError.message)
     process.exit(1)
   }
 
-  if (!insertedApts || insertedApts.length !== apartments.length) {
-    console.error('Unexpected number of apartments inserted')
+  const { data: insertedApts, error: aptFetchError } = await supabase
+    .from('apartments')
+    .select('id, address_label')
+    .in('address_label', apartments.map((a) => a.address_label))
+
+  if (aptFetchError || !insertedApts) {
+    console.error('Error fetching apartments:', aptFetchError?.message)
     process.exit(1)
   }
 
-  console.log(`✅ Inserted ${insertedApts.length} apartments`)
+  if (insertedApts.length !== apartments.length) {
+    console.error(`Expected ${apartments.length} apartments, got ${insertedApts.length}`)
+    process.exit(1)
+  }
+
+  const aptById = Object.fromEntries(insertedApts.map((a) => [a.address_label, a.id]))
+  // Re-map insertedApts to match original order
+  const orderedApts = apartments.map((a) => ({ id: aptById[a.address_label] }))
+
+  console.log(`✅ Upserted ${insertedApts.length} apartments`)
 
   const pairs: Array<{
     date: string
@@ -288,25 +301,24 @@ async function seed() {
       pairs.push({
         date,
         round_number: round + 1,
-        apartment_a_id: insertedApts[aIdx].id,
-        apartment_b_id: insertedApts[bIdx].id,
+        apartment_a_id: orderedApts[aIdx].id,
+        apartment_b_id: orderedApts[bIdx].id,
       })
     }
   }
 
   console.log('🌱 Seeding daily pairs...')
 
-  const { data: insertedPairs, error: pairError } = await supabase
+  const { error: pairError } = await supabase
     .from('daily_pairs')
-    .insert(pairs)
-    .select()
+    .upsert(pairs, { onConflict: 'date,round_number', ignoreDuplicates: true })
 
   if (pairError) {
-    console.error('Error inserting pairs:', pairError.message)
+    console.error('Error upserting pairs:', pairError.message)
     process.exit(1)
   }
 
-  console.log(`✅ Inserted ${insertedPairs?.length} daily pairs`)
+  console.log(`✅ Upserted ${pairs.length} daily pairs`)
   console.log('')
   console.log('📅 Scheduled (5 rounds each):')
   for (let i = 0; i < dailyPairDefs.length; i++) {

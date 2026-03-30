@@ -1,7 +1,6 @@
 import { supabase } from '@/lib/supabase'
 import { PairWithApartments } from '@/lib/supabase'
-import GameClient from '@/components/GameClient'
-import StreakDisplay from '@/components/StreakDisplay'
+import HomeWrapper from '@/components/HomeWrapper'
 
 export const dynamic = 'force-dynamic'
 
@@ -44,46 +43,5 @@ export default async function HomePage() {
   const today = new Date().toISOString().split('T')[0]
   const pairs = await getTodaysPairs()
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="w-full border-b border-white/5 bg-[#0f0f0f]/80 backdrop-blur-sm sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-xl font-black tracking-tight text-teal-400">Rentle</span>
-            <span className="text-white/20 text-xs hidden sm:block">daily apartment value game</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <StreakDisplay />
-          </div>
-        </div>
-      </header>
-
-      {/* Main */}
-      <main className="flex-1 w-full max-w-4xl mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-            Which apartment is better value?
-          </h1>
-          <p className="text-white/40 text-sm">
-            Vote for the one you think is the better deal for the money
-          </p>
-        </div>
-
-        {pairs.length > 0 ? (
-          <GameClient pairs={pairs} date={today} />
-        ) : (
-          <div className="flex flex-col items-center justify-center py-24 gap-4">
-            <p className="text-4xl">🏠</p>
-            <p className="text-white/60 text-lg">No apartment pairs scheduled for today.</p>
-            <p className="text-white/30 text-sm">Check back later!</p>
-          </div>
-        )}
-      </main>
-
-      <footer className="text-center text-white/20 text-xs py-6">
-        Rentle — built for apartment nerds
-      </footer>
-    </div>
-  )
+  return <HomeWrapper pairs={pairs} date={today} />
 }

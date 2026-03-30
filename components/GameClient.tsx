@@ -2,12 +2,16 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import ApartmentCard from './ApartmentCard'
+import EmojiExplosion from './EmojiExplosion'
 import { PairWithApartments } from '@/lib/supabase'
 import {
   getGameState,
   saveGameState,
   getStreak,
   updateStreak,
+  getOrCreateUserId,
+  syncStateToSupabase,
+  loadStateFromSupabase,
   RoundResult,
 } from '@/lib/localStorage'
 
@@ -37,18 +41,46 @@ export default function GameClient({ pairs, date }: Props) {
   const [revealState, setRevealState] = useState<RevealState | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const [streak, setStreak] = useState(0)
+  const [explosion, setExplosion] = useState<{ trigger: boolean; correct: boolean }>({ trigger: false, correct: false })
 
   useEffect(() => {
-    const saved = getGameState(date)
-    if (saved) {
-      setResults(saved.rounds)
-      if (saved.complete) {
-        setPhase('complete')
-      } else {
-        setCurrentRound(saved.rounds.length)
+    const localSaved = getGameState(date)
+    const localStreak = getStreak()
+
+    const userId = getOrCreateUserId()
+    loadStateFromSupabase(userId, date).then((remote) => {
+      // Use remote state if it is more complete than local
+      const useRemote =
+        remote !== null &&
+        (remote.complete ||
+          remote.rounds.length > (localSaved?.rounds.length ?? 0))
+
+      const saved = useRemote ? remote : localSaved
+
+      if (saved) {
+        setResults(saved.rounds)
+        if (saved.complete) {
+          setPhase('complete')
+        } else {
+          setCurrentRound(saved.rounds.length)
+        }
+        if (useRemote) {
+          setStreak(remote!.streak)
+          return
+        }
       }
-    }
-    setStreak(getStreak())
+      setStreak(localStreak)
+    }).catch(() => {
+      if (localSaved) {
+        setResults(localSaved.rounds)
+        if (localSaved.complete) {
+          setPhase('complete')
+        } else {
+          setCurrentRound(localSaved.rounds.length)
+        }
+      }
+      setStreak(localStreak)
+    })
   }, [date])
 
   const handleVote = useCallback(
@@ -96,9 +128,12 @@ export default function GameClient({ pairs, date }: Props) {
         }
         setRevealState(reveal)
         setPhase('reveal')
+        setExplosion({ trigger: true, correct })
 
         const isLastRound = currentRound === totalRounds - 1
         saveGameState(date, { rounds: newResults, complete: isLastRound })
+
+        const userId = getOrCreateUserId()
 
         setTimeout(() => {
           if (isLastRound) {
@@ -106,7 +141,11 @@ export default function GameClient({ pairs, date }: Props) {
             const newStreak = updateStreak(date, anyCorrect)
             setStreak(newStreak)
             setPhase('complete')
+            // Sync final complete state in background
+            syncStateToSupabase(userId, date, { rounds: newResults, complete: true }, newStreak, date)
           } else {
+            // Sync in-progress state in background
+            syncStateToSupabase(userId, date, { rounds: newResults, complete: false }, getStreak(), date)
             setCurrentRound((prev) => prev + 1)
             setRevealState(null)
             setPhase('voting')
@@ -139,6 +178,7 @@ export default function GameClient({ pairs, date }: Props) {
 
   return (
     <div className="flex flex-col items-center gap-6">
+      <EmojiExplosion correct={explosion.correct} trigger={explosion.trigger} />
       {/* Round progress */}
       <div className="flex flex-col items-center gap-2">
         <p className="text-white/50 text-sm font-medium">
@@ -204,11 +244,11 @@ export default function GameClient({ pairs, date }: Props) {
 
       {/* Reveal message */}
       {phase === 'reveal' && revealState && (
-        <div className="flex flex-col items-center gap-1 text-center animate-fade-in">
-          <p className="text-xl font-bold text-white">
+        <div className="flex flex-col items-center gap-1 text-center">
+          <p className={`text-xl font-bold text-white ${revealState.correct ? 'animate-reveal-win' : 'animate-reveal-lose'}`}>
             {revealState.correct ? 'Nice pick! 🎉' : 'Not quite 😅'}
           </p>
-          <p className="text-white/40 text-sm">
+          <p className="text-white/40 text-sm animate-fade-in">
             {currentRound < totalRounds - 1 ? 'Next round in a moment…' : 'Wrapping up…'}
           </p>
         </div>

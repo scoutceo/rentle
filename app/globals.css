@@ -18,3 +18,102 @@ body {
 .animate-fade-in {
   animation: fade-in 0.4s ease-out forwards;
 }
+
+/* ── Win: confetti burst from center ── */
+@keyframes confetti-burst {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(0.5);
+  }
+  12% {
+    opacity: 1;
+    transform: translate(calc(var(--tx) * 0.4), calc(var(--ty) * 0.4)) rotate(calc(var(--rotation) * 0.3)) scale(1.4);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rotation)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--tx) * 1.1), calc(var(--ty) * 1.1 + 40px)) rotate(calc(var(--rotation) * 1.2)) scale(0.3);
+  }
+}
+
+.animate-confetti-burst {
+  opacity: 0;
+  animation: confetti-burst 1s ease-out forwards;
+}
+
+/* ── Lose: live-stream horizontal flood ── */
+@keyframes flood-ltr {
+  0%  { opacity: 0; transform: translateX(-150px) translateY(0); }
+  8%  { opacity: 1; }
+  25% { transform: translateX(25vw) translateY(var(--wave)); }
+  50% { transform: translateX(50vw) translateY(0px); }
+  75% { transform: translateX(75vw) translateY(calc(var(--wave) * -0.6)); }
+  92% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(calc(100vw + 150px)) translateY(0); }
+}
+
+.animate-flood-ltr {
+  opacity: 0;
+  animation: flood-ltr 1.5s ease-in-out forwards;
+}
+
+@keyframes flood-rtl {
+  0%  { opacity: 0; transform: translateX(150px) translateY(0); }
+  8%  { opacity: 1; }
+  25% { transform: translateX(-25vw) translateY(var(--wave)); }
+  50% { transform: translateX(-50vw) translateY(0px); }
+  75% { transform: translateX(-75vw) translateY(calc(var(--wave) * -0.6)); }
+  92% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(calc(-100vw - 150px)) translateY(0); }
+}
+
+.animate-flood-rtl {
+  opacity: 0;
+  animation: flood-rtl 1.5s ease-in-out forwards;
+}
+
+/* ── Win screen flash ── */
+@keyframes screen-flash {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-screen-flash {
+  animation: screen-flash 0.2s ease-out forwards;
+}
+
+/* ── Reveal text: win bounce ── */
+@keyframes reveal-win {
+  0%   { opacity: 0; transform: scale(0.5); }
+  60%  { opacity: 1; transform: scale(1.15); }
+  75%  { transform: scale(0.95); }
+  87%  { transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-reveal-win {
+  opacity: 0;
+  animation: reveal-win 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Reveal text: lose shake ── */
+@keyframes reveal-lose {
+  0%   { opacity: 0; transform: translateX(0); }
+  10%  { opacity: 1; }
+  20%  { transform: translateX(-10px); }
+  35%  { transform: translateX(10px); }
+  50%  { transform: translateX(-7px); }
+  65%  { transform: translateX(7px); }
+  80%  { transform: translateX(-3px); }
+  90%  { transform: translateX(3px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-reveal-lose {
+  opacity: 0;
+  animation: reveal-lose 0.6s ease-out forwards;
+}
