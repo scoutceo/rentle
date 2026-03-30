@@ -28,13 +28,10 @@ export default function HomeWrapper({ pairs, date }: Props) {
           </div>
         </header>
 
-        <main className="flex-1 w-full max-w-4xl mx-auto px-4 py-8">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-              Which apartment is the better deal?
-            </h1>
-            <p className="text-white/40 text-sm">
-              Same city. Same week. You decide.
+        <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-8 md:py-10">
+          <div className="text-center mb-7">
+            <p className="text-white/45 text-sm sm:text-[0.95rem]">
+              Pick the better deal, then see where the crowd landed.
             </p>
           </div>
 
