@@ -67,30 +67,30 @@ function LandingPage({ onPlay, hasPairs }: { onPlay: () => void; hasPairs: boole
       </div>
 
       {/* Portal card */}
-      <div className="relative z-10 w-full max-w-sm mx-auto px-5 py-12 flex flex-col items-center gap-8">
+      <div className="relative z-10 w-full max-w-lg mx-auto px-6 py-12 md:px-8 md:py-16 flex flex-col items-center gap-10">
 
         {/* Title lockup */}
         <div className="text-center flex flex-col items-center gap-3">
-          <h1 className="text-[5.5rem] sm:text-[6.5rem] font-black tracking-tighter text-white leading-none select-none">
+          <h1 className="text-[5.75rem] sm:text-[7rem] md:text-[7.75rem] font-black tracking-tighter text-white leading-none select-none">
             RENTLE
           </h1>
-          <p className="text-white/55 text-base font-medium tracking-wide">
+          <p className="text-white/55 text-[1.05rem] sm:text-lg font-medium tracking-wide">
             The daily apartment value game
           </p>
-          <p className="text-white/30 text-sm max-w-[260px] text-center leading-relaxed">
+          <p className="text-white/30 text-sm sm:text-[0.95rem] max-w-[320px] text-center leading-relaxed">
             Two real listings. Pick the better deal.<br />See how the crowd voted.
           </p>
         </div>
 
         {/* Tiles */}
-        <div className="w-full flex flex-col gap-3">
+        <div className="w-full flex flex-col gap-4">
 
           {/* Daily — primary CTA */}
           <button
             onClick={hasPairs ? onPlay : undefined}
             disabled={!hasPairs}
             className={[
-              'w-full rounded-2xl px-5 py-4 flex items-center justify-between border',
+              'w-full rounded-2xl px-5 py-5 sm:px-6 sm:py-5 flex items-center justify-between border',
               'transition-all duration-200 active:scale-[0.98] group text-left',
               hasPairs
                 ? 'bg-teal-500/10 border-teal-500/25 hover:bg-teal-500/18 hover:border-teal-400/40 cursor-pointer'
