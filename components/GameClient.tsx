@@ -208,10 +208,9 @@ export default function GameClient({ pairs, date }: Props) {
       </div>
 
       {/* Cards grid */}
-      <div className="relative w-full grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+      <div className="relative w-full grid grid-cols-1 items-center gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-5">
         <ApartmentCard
           apartment={pair.apartment_a}
-          side="A"
           voted={voted}
           chosen={choice === 'A'}
           correct={choice === 'A' ? correct : null}
@@ -223,8 +222,7 @@ export default function GameClient({ pairs, date }: Props) {
         {/* VS Badge */}
         <div className="flex items-center justify-center">
           <div
-            className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center
-            text-white/60 font-bold text-sm shrink-0"
+            className="h-11 w-11 shrink-0 rounded-full border border-white/20 bg-white/10 text-white/60 font-bold text-sm flex items-center justify-center shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
           >
             VS
           </div>
@@ -232,7 +230,6 @@ export default function GameClient({ pairs, date }: Props) {
 
         <ApartmentCard
           apartment={pair.apartment_b}
-          side="B"
           voted={voted}
           chosen={choice === 'B'}
           correct={choice === 'B' ? correct : null}
