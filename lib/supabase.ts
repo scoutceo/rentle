@@ -32,6 +32,10 @@ export type Apartment = {
   sqft: number
   photo_url: string
   photo_urls?: string[] | null
+  source?: string | null
+  source_listing_id?: string | null
+  listing_url?: string | null
+  photos_hosted?: boolean | null
   created_at: string
 }
 

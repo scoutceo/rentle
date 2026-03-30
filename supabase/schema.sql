@@ -10,6 +10,10 @@ create table if not exists apartments (
   sqft integer not null,
   photo_url text not null,
   photo_urls text[],
+  source text default 'synthetic',
+  source_listing_id text,
+  listing_url text,
+  photos_hosted boolean default false,
   created_at timestamptz default now()
 );
 
