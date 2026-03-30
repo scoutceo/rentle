@@ -3,9 +3,9 @@ import { generateMissingDailyPairs, getEasternDateKey, getEasternHour } from '@/
 
 export async function GET(req: NextRequest) {
   const authHeader = req.headers.get('authorization')
-  const expected = process.env.CRON_SECRET || 'rentle-cron-2026'
+  const expected = process.env.CRON_SECRET
 
-  if (authHeader !== `Bearer ${expected}`) {
+  if (!expected || authHeader !== `Bearer ${expected}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
