@@ -15,6 +15,13 @@ export const metadata: Metadata = {
     title: "Rentle",
     description: "Daily apartment value comparison game",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rentle",
+    description: "Daily apartment value comparison game",
+    images: ["/opengraph-image"],
   },
 };
 
