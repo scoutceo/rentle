@@ -55,7 +55,7 @@ type ModalType = 'how-it-works' | 'about' | null
 function LandingPage({ onPlay, hasPairs }: { onPlay: () => void; hasPairs: boolean }) {
   const [modal, setModal] = useState<ModalType>(null)
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#08080d]">
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-blue-900">
       {/* Atmospheric blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <div className="absolute top-[-8%] right-[-4%] w-[55vw] h-[55vw] max-w-[640px] max-h-[640px] rounded-full bg-teal-500/[0.07] blur-[130px]" />
