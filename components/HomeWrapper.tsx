@@ -29,12 +29,6 @@ export default function HomeWrapper({ pairs, date }: Props) {
         </header>
 
         <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-8 md:py-10">
-          <div className="text-center mb-7">
-            <p className="text-white/45 text-sm sm:text-[0.95rem]">
-              Pick the better deal, then see where the crowd landed.
-            </p>
-          </div>
-
           {pairs.length > 0 ? (
             <GameClient pairs={pairs} date={date} />
           ) : (
