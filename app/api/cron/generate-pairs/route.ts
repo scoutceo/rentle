@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   const expected = process.env.CRON_SECRET || 'rentle-cron-2026'
 
   if (authHeader !== `Bearer ${expected}`) {
-    return NextResponse.json({ error: 'Unauthorized', hint: expected.substring(0, 4) }, { status: 401 })
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
   const now = new Date()
