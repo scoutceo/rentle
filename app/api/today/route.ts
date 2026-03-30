@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
+import { getEasternDateKey } from '@/lib/date'
 import { supabase } from '@/lib/supabase'
 
 export async function GET() {
-  const today = new Date().toISOString().split('T')[0]
+  const today = getEasternDateKey()
 
   const { data: pairs, error: pairsError } = await supabase
     .from('daily_pairs')

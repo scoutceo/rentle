@@ -1,11 +1,12 @@
 import { supabase } from '@/lib/supabase'
 import { PairWithApartments } from '@/lib/supabase'
+import { getEasternDateKey } from '@/lib/date'
 import HomeWrapper from '@/components/HomeWrapper'
 
 export const dynamic = 'force-dynamic'
 
 async function getTodaysPairs(): Promise<PairWithApartments[]> {
-  const today = new Date().toISOString().split('T')[0]
+  const today = getEasternDateKey()
 
   const { data: pairs } = await supabase
     .from('daily_pairs')
@@ -40,7 +41,7 @@ async function getTodaysPairs(): Promise<PairWithApartments[]> {
 }
 
 export default async function HomePage() {
-  const today = new Date().toISOString().split('T')[0]
+  const today = getEasternDateKey()
   const pairs = await getTodaysPairs()
 
   return <HomeWrapper pairs={pairs} date={today} />
